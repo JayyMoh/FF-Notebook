@@ -1,21 +1,19 @@
 const mongoose = require('mongoose')
 
-const nflPlayerSchema = new mongoose.Schema({
+const veteransSchema = new mongoose.Schema({
+    img: { type: String },
     name: { type: String, required: true},
     age: { type: Number, required: true},
     height: { type: String },
     weight: { type: Number },
     exp: { type: Number, required: true },
-    team: {
-        name: { type: String, required: true },
-        logo: { type: String, required: true },
-        required: true
-    },
+    team_name: { type: String, required: true },
+    team_logo: { type: String, required: true },
     position: { type: String },
     number: { type: Number },
     notes: { type: String }
 })
 
-const NFLPLAYER = mongoose.model('NFLPLAYER', nflPlayerSchema)
+const Veterans = mongoose.model('Veterans', veteransSchema)
 
-module.exports = NFLPLAYER
+module.exports = Veterans

@@ -1,6 +1,21 @@
 const express = require('express')
 const APP = express()
 const PORT = 3000
+const mongoose = require('mongoose')
+const methodOverride = require('method-override')
+const Veterans = require('./models/veterans.js')
+
+//middleware
+APP.use(express.urlencoded({extended: true}));
+APP.use(methodOverride('_method'));
+
+
+// mongoose middleware
+mongoose.connect('mongodb://localhost:27017/ffnotebook', { useNewUrlParser: true });
+mongoose.connection.once('open', () => {
+  console.log('connected to mongo')
+});
+
 
 // ===== Main Page (index) =====
 APP.get('/ffnotebook', (req, res) => {
@@ -9,7 +24,16 @@ APP.get('/ffnotebook', (req, res) => {
 
 // ===== Veterans Page =====
 APP.get('/ffnotebook/veterans', (req, res) => {
-    res.render('veterans.ejs')
+    Veterans.find({}, (error, allVets) => {
+        res.render('veterans.ejs', {
+            veterans: allVets
+        })
+    })
+})
+
+// ===== New Vet =====
+APP.get('/ffnotebook/new/veteran', (req, res) => {
+    res.render('new_vet.ejs')
 })
 
 // ===== Rookie Page =====
