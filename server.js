@@ -22,6 +22,8 @@ APP.get('/ffnotebook', (req, res) => {
     res.render('index.ejs')
 })
 
+// ------ vet section -------
+
 // ===== Veterans Page =====
 APP.get('/ffnotebook/veterans', (req, res) => {
     Veterans.find({}, (error, allVets) => {
@@ -35,6 +37,8 @@ APP.get('/ffnotebook/veterans', (req, res) => {
 APP.get('/ffnotebook/new/veteran', (req, res) => {
     res.render('new_vet.ejs')
 })
+
+// ===== Create Vet =====
 
 // ===== Rookie Page =====
 APP.get('/ffnotebook/rookies', (req, res) => {
