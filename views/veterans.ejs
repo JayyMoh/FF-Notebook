@@ -37,10 +37,25 @@
             </div>
         </div>
         <!-- player list  -->
-        <div class="container">
+        <div class="container player-container">
             <% for (let i = 0; i < veterans.length; i++) { %>
             <div class="row">
-                <div class="col-1"> <%= veterans[i].img %> </div>
+                <div class="col"> <img src="<%= veterans[i].img %>" height="100px" width="100px"> </div>
+                <div class="col"> 
+                    <%= veterans[i].name %> 
+                    <div class="row">
+                        <div class="col"><img src="<%= veterans[i].team_logo %>" height="50px" width="50px"> <%= veterans[i].team_name %> </div>
+                    </div>        
+                </div>
+                <div class="col"> 
+                    Position: <%= veterans[i].position %> 
+                </div>
+                <div class="col"> 
+                    Age: <%= veterans[i].age %> 
+                    <div class="row">
+                        Weight: <%= veterans[i].weight %>lbs
+                    </div>
+                </div>
             </div>
             <% } %>
         </div>

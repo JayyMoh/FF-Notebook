@@ -22,6 +22,8 @@ APP.get('/ffnotebook', (req, res) => {
     res.render('index.ejs')
 })
 
+// ===== VETERANS SECTION =====
+
 // ===== Veterans Page =====
 APP.get('/ffnotebook/veterans', (req, res) => {
     Veterans.find({}, (error, allVets) => {
@@ -36,32 +38,60 @@ APP.get('/ffnotebook/new/veteran', (req, res) => {
     res.render('new_vet.ejs')
 })
 
+// ===== Create Vet =====
+APP.post('/ffnotebook/veterans', (req, res) => {
+    Veterans.create(req.body, (error, createdVet) => {
+        if (error) {
+            console.log(error)
+        } else {
+            console.log('Here is your added Vet: ', createdVet)
+        }
+        res.redirect('/veterans')
+    })
+})
+
+// ===== Edit Vet =====
+
+// ===== Delete Vet =====
+
+// --------------------------------
+
+// -------- ROOKIE SECTION ---------
+
 // ===== Rookie Page =====
 APP.get('/ffnotebook/rookies', (req, res) => {
     res.render('rookies.ejs')
 })
+
+// ===== Add Rookie =====
+
+// ===== Create Rookie =====
+
+// ===== Edit Rookie =====
+
+// ===== Delete Rookie =====
+
+
+// ---------------------------------
+
+// -------- DEVY SECTION -----------
 
 // ===== Devy Page =====
 APP.get('/ffnotebook/devy', (req, res) => {
     res.render('devy.ejs')
 })
 
-// ===== New View =====
+// ===== Add Devy =====
+
+// ===== Create Devy =====
+
+// ===== Edit Devy =====
+
+// ===== Delete Devy =====
 
 
-// ===== Create =====
+// ----------------------------------
 
-
-// ===== Show =====
-
-
-// ===== Edit =====
-
-
-// ===== Update =====
-
-
-// ===== Destroy =====
 
 APP.listen(PORT, () => {
     console.log('Server is up and running on port', PORT)
