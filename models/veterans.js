@@ -7,9 +7,9 @@ const veteransSchema = new mongoose.Schema({
     height: { type: String },
     weight: { type: Number },
     exp: { type: Number, required: true },
-    team_name: { type: String, required: true },
-    team_logo: { type: String, required: true },
-    position: { type: String },
+    team_name: { type: String },
+    team_logo: { type: String },
+    position: { type: String, required: true },
     number: { type: Number },
     notes: { type: String }
 })

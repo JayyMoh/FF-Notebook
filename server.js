@@ -46,7 +46,7 @@ APP.post('/ffnotebook/veterans', (req, res) => {
         } else {
             console.log('Here is your added Vet: ', createdVet)
         }
-        res.redirect('/veterans')
+        res.redirect('/ffnotebook/veterans')
     })
 })
 
@@ -78,6 +78,13 @@ APP.put('/ffnotebook/veterans/:id', (req, res) => {
 })
 
 // ===== Delete Vet =====
+APP.delete('/ffnotebook/veterans/:id', (req, res) => {
+    Veterans.findByIdAndRemove(req.params.id, (err, deletedVet) => {
+        console.log('Deleted Player: ', deletedVet)
+        res.redirect('/ffnotebook/veterans')
+    })
+})
+
 
 // --------------------------------
 
