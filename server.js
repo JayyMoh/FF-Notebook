@@ -60,8 +60,22 @@ APP.get('/ffnotebook/veterans/:id', (req, res) => {
 })
 
 
-// ===== Edit Vet =====
+// ===== Find Vet to Edit =====
+APP.get('/ffnotebook/veterans/:id/edit', (req, res) => {
+    Veterans.findById(req.params.id, (err, editVet) => {
+        res.render('edit_vet.ejs', {
+            veterans: editVet
+        })
+    })
+})
 
+// ===== Edit the Vet =====
+APP.put('/ffnotebook/veterans/:id', (req, res) => {
+    Veterans.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedVet) => {
+        console.log(updatedVet)
+        res.redirect('/ffnotebook/veterans')
+    })
+})
 
 // ===== Delete Vet =====
 
