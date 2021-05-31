@@ -150,6 +150,12 @@ APP.get('/ffnotebook/rookies/:id/edit', (req, res) => {
 
 
 // ===== Delete Rookie =====
+APP.delete('/ffnotebook/rookies/:id', (req, res) => {
+    Rookies.findByIdAndRemove(req.params.id, (err, deletedRook) => {
+        console.log('Deleted Player: ', deletedRook)
+        res.redirect('/ffnotebook/rookies')
+    })
+})
 
 
 // ---------------------------------
