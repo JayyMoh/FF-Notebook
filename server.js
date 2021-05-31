@@ -121,8 +121,33 @@ APP.post('/ffnotebook/rookies', (req, res) => {
     })
 })
 
+// ===== Show Rookie =====
+APP.get('/ffnotebook/rookies/:id', (req, res) => {
+    Rookies.findById(req.params.id, (err, foundRook) => {
+        res.render('show_rook.ejs', {
+            rookies: foundRook
+        })
+    })
+})
 
-// ===== Edit Rookie =====
+
+// // ===== Find Rookie to Edit =====
+// APP.get('/ffnotebook/rookies/:id/edit', (req, res) => {
+//     Rookies.findById(req.params.id, (err, editRook) => {
+//         res.render('edit_rook.ejs', {
+//             rookies: editRook
+//         })
+//     })
+// })
+
+//  // ===== Edit the Rookie =====
+//  APP.put('/ffnotebook/rookies/:id', (req, res) => {
+//     Rookies.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedRook) => {
+//         console.log(updatedRook)
+//         res.redirect('/ffnotebook/rookies')
+//     })
+// })
+
 
 // ===== Delete Rookie =====
 
