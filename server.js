@@ -22,7 +22,11 @@ APP.get('/ffnotebook', (req, res) => {
     res.render('index.ejs')
 })
 
+<<<<<<< HEAD
 // ===== VETERANS SECTION =====
+=======
+// ------ vet section -------
+>>>>>>> 1c36dab356dec84ed23b84b21eed39ed0183d898
 
 // ===== Veterans Page =====
 APP.get('/ffnotebook/veterans', (req, res) => {
@@ -39,6 +43,7 @@ APP.get('/ffnotebook/new/veteran', (req, res) => {
 })
 
 // ===== Create Vet =====
+<<<<<<< HEAD
 APP.post('/ffnotebook/veterans', (req, res) => {
     Veterans.create(req.body, (error, createdVet) => {
         if (error) {
@@ -57,6 +62,8 @@ APP.post('/ffnotebook/veterans', (req, res) => {
 // --------------------------------
 
 // -------- ROOKIE SECTION ---------
+=======
+>>>>>>> 1c36dab356dec84ed23b84b21eed39ed0183d898
 
 // ===== Rookie Page =====
 APP.get('/ffnotebook/rookies', (req, res) => {
