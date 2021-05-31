@@ -1,14 +1,13 @@
 const mongoose = require('mongoose')
 
 const rookiesSchema = new mongoose.Schema({
+    img: { type: String },
     name: { type: String, required: true},
     age: { type: Number, required: true},
     height: { type: String },
     weight: { type: Number },
-    team: {
-        name: { type: String, required: true },
-        logo: { type: String, required: true },
-    },
+    team_name: { type: String },
+    team_logo: { type: String },
     position: { type: String },
     number: { type: Number },
     college: { type: String, requierd: true },

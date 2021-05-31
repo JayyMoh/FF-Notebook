@@ -104,9 +104,23 @@ APP.get('/ffnotebook/rookies', (req, res) => {
     })
 })
 
-// ===== Add Rookie =====
+// ===== New Rookie =====
+APP.get('/ffnotebook/new/rookies', (req, res) => {
+    res.render('new_rook.ejs')
+})
 
 // ===== Create Rookie =====
+APP.post('/ffnotebook/rookies', (req, res) => {
+    Rookies.create(req.body, (error, createdRookie) => {
+        if (error) {
+            console.log(error)
+        } else {
+            console.log('Here is your added Rookie: ', createdRookie)
+        }
+        res.redirect('/ffnotebook/rookies')
+    })
+})
+
 
 // ===== Edit Rookie =====
 
