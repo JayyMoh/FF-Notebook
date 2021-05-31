@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const rookies = new mongoose.Schema({
+const rookiesSchema = new mongoose.Schema({
     name: { type: String, required: true},
     age: { type: Number, required: true},
     height: { type: String },
@@ -15,3 +15,7 @@ const rookies = new mongoose.Schema({
     draft_capital: { type: String, required: true },
     notes: { type: String }
 })
+
+const Rookies = mongoose.model('Rookies', rookiesSchema)
+
+module.exports = Rookies

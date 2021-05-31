@@ -4,6 +4,7 @@ const PORT = 3000
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const Veterans = require('./models/veterans.js')
+const Rookies = require('./models/rookies.js')
 
 //middleware
 APP.use(express.urlencoded({extended: true}));
@@ -22,7 +23,10 @@ APP.get('/ffnotebook', (req, res) => {
     res.render('index.ejs')
 })
 
-// ===== VETERANS SECTION =====
+
+// ===================================
+// ------- VETERAN SECTION ------------
+// ===================================
 
 // ===== Veterans Page =====
 APP.get('/ffnotebook/veterans', (req, res) => {
@@ -86,13 +90,18 @@ APP.delete('/ffnotebook/veterans/:id', (req, res) => {
 })
 
 
-// --------------------------------
 
-// -------- ROOKIE SECTION ---------
+// ================================
+// -------- ROOKIE SECTION --------
+// ================================
 
 // ===== Rookie Page =====
 APP.get('/ffnotebook/rookies', (req, res) => {
-    res.render('rookies.ejs')
+    Rookies.find({}, (error, allRookies) => {
+        res.render('rookies.ejs', {
+            rookies: allRookies
+        })
+    })
 })
 
 // ===== Add Rookie =====
@@ -106,7 +115,10 @@ APP.get('/ffnotebook/rookies', (req, res) => {
 
 // ---------------------------------
 
-// -------- DEVY SECTION -----------
+// ================================
+// -------- DEVY SECTION ----------
+// ================================
+
 
 // ===== Devy Page =====
 APP.get('/ffnotebook/devy', (req, res) => {
