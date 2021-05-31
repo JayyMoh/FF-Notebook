@@ -26,13 +26,13 @@
             <div class="col-1">
                 <a href="#">QB</a>
             </div>
-            <div class="col-1">
+            <div class="col-2">
                 <a href="#">RB</a>
             </div>
-            <div class="col-1">
+            <div class="col-3">
                 <a href="#">WR</a>
             </div>
-            <div class="col-1">
+            <div class="col-4">
                 <a href="#">TE</a>
             </div>
         </div>
@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="col"> <img src="<%= veterans[i].img %>" height="100px" width="100px"> </div>
                 <div class="col"> 
-                    <%= veterans[i].name %> 
+                    <a href="/ffnotebook/veterans/<%= veterans[i].id %>"><%= veterans[i].name %></a> 
                     <div class="row">
                         <div class="col"><img src="<%= veterans[i].team_logo %>" height="50px" width="50px"> <%= veterans[i].team_name %> </div>
                     </div>        
