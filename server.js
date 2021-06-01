@@ -1,11 +1,12 @@
 const express = require('express')
 const APP = express()
-const PORT = 3000
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const Veterans = require('./models/veterans.js')
 const Rookies = require('./models/rookies.js')
 const Devy = require('./models/devy.js')
+const ENV = require('dotenv').config()
+const PORT = process.env.PORT
 
 // connect to the database either via heroku or locally
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ffnotebook'
