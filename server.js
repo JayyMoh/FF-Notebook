@@ -220,6 +220,12 @@ APP.put('/ffnotebook/devy/:id', (req, res) => {
 })
 
 // ===== Delete Devy =====
+APP.delete('/ffnotebook/devy/:id', (req, res) => {
+    Devy.findByIdAndRemove(req.params.id, (err, deletedDevy) => {
+        console.log('Deleted Player: ', deletedDevy)
+        res.redirect('/ffnotebook/devy')
+    })
+})
 
 
 // ----------------------------------
