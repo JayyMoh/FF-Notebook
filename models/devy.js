@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
-const devy = new mongoose.Schema({
+const devySchema = new mongoose.Schema({
+    img: { type: String },
     name: { type: String, required: true},
     age: { type: Number, required: true},
     height: { type: String },
@@ -11,3 +12,7 @@ const devy = new mongoose.Schema({
     star_recruit: { type: String },
     notes: { type: String }
 })
+
+const Devy = mongoose.model('Devy', devySchema)
+
+module.exports = Devy

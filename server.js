@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const Veterans = require('./models/veterans.js')
 const Rookies = require('./models/rookies.js')
+const Devy = require('./models/devy.js')
 
 //middleware
 APP.use(express.urlencoded({extended: true}));
@@ -167,7 +168,11 @@ APP.delete('/ffnotebook/rookies/:id', (req, res) => {
 
 // ===== Devy Page =====
 APP.get('/ffnotebook/devy', (req, res) => {
-    res.render('devy.ejs')
+    Devy.find({}, (error, allDevy) => {
+        res.render('devy.ejs', {
+            devy: allDevy
+        })
+    })
 })
 
 // ===== Add Devy =====
