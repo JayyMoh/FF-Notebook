@@ -175,9 +175,23 @@ APP.get('/ffnotebook/devy', (req, res) => {
     })
 })
 
-// ===== Add Devy =====
+// ===== New Devy =====
+APP.get('/ffnotebook/new/devy', (req, res) => {
+    res.render('new_devy.ejs')
+})
 
 // ===== Create Devy =====
+APP.post('/ffnotebook/devy', (req, res) => {
+    Devy.create(req.body, (error, createdDevy) => {
+        if (error) {
+            console.log(error)
+        } else {
+            console.log('Here is your added Devy: ', createdDevy)
+        }
+        res.redirect('/ffnotebook/devy')
+    })
+})
+
 
 // ===== Edit Devy =====
 
