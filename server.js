@@ -7,13 +7,16 @@ const Veterans = require('./models/veterans.js')
 const Rookies = require('./models/rookies.js')
 const Devy = require('./models/devy.js')
 
+// connect to the database either via heroku or locally
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ffnotebook'
+
 //middleware
 APP.use(express.urlencoded({extended: true}));
 APP.use(methodOverride('_method'));
 
 
 // mongoose middleware
-mongoose.connect('mongodb://localhost:27017/ffnotebook', { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 mongoose.connection.once('open', () => {
   console.log('connected to mongo')
 });
