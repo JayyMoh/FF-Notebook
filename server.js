@@ -192,6 +192,15 @@ APP.post('/ffnotebook/devy', (req, res) => {
     })
 })
 
+// ===== Show Devy =====
+APP.get('/ffnotebook/devy/:id', (req, res) => {
+    Devy.findById(req.params.id, (err, foundDevy) => {
+        res.render('show_devy.ejs', {
+            devy: foundDevy
+        })
+    })
+})
+
 
 // ===== Edit Devy =====
 
