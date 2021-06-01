@@ -202,7 +202,22 @@ APP.get('/ffnotebook/devy/:id', (req, res) => {
 })
 
 
+// ===== Find Devy to Edit =====
+APP.get('/ffnotebook/devy/:id/edit', (req, res) => {
+    Devy.findById(req.params.id, (err, editDevy) => {
+        res.render('edit_devy.ejs', {
+            devy: editDevy
+        })
+    })
+})
+
 // ===== Edit Devy =====
+APP.put('/ffnotebook/devy/:id', (req, res) => {
+    Devy.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedDevy) => {
+        console.log(updatedDevy)
+        res.redirect('/ffnotebook/devy')
+    })
+})
 
 // ===== Delete Devy =====
 
