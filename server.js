@@ -15,6 +15,7 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ffnote
 // open the connection to mongo
 db.on('open' , ()=>{})
 
+
 //middleware
 APP.use(express.urlencoded({extended: true}))
 APP.use(express.json())
