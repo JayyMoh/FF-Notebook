@@ -28,6 +28,9 @@ mongoose.connection.once('open', () => {
   console.log('connected to mongo')
 });
 
+APP.get('/', (req, res) => {
+    res.redirect('/ffnotebook')
+})
 
 // ===== Main Page (index) =====
 APP.get('/ffnotebook', (req, res) => {
