@@ -2,6 +2,7 @@ const express = require('express')
 const APP = express()
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
+const db = mongoose.connection
 const Veterans = require('./models/veterans.js')
 const Rookies = require('./models/rookies.js')
 const Devy = require('./models/devy.js')
@@ -11,9 +12,13 @@ const PORT = process.env.PORT
 // connect to the database either via heroku or locally
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ffnotebook'
 
+// open the connection to mongo
+db.on('open' , ()=>{})
+
 //middleware
-APP.use(express.urlencoded({extended: true}));
-APP.use(methodOverride('_method'));
+APP.use(express.urlencoded({extended: true}))
+APP.use(express.json())
+APP.use(methodOverride('_method'))
 
 
 // mongoose middleware
