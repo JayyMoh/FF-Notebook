@@ -14,6 +14,7 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ffnote
 APP.use(express.urlencoded({extended: true}))
 APP.use(express.json())
 APP.use(methodOverride('_method'))
+APP.use(express.static('public'))
 
 // Mongoose 
 mongoose.connect(MONGODB_URI, { 
