@@ -12,7 +12,7 @@
         <%- include ('./partials/nav.ejs') %>
     </nav>
     <div class="container">
-        <form action="/ffnotebook/veterans/<%= veterans.id %>?_method=PUT", method="POST">
+        <form action="/veterans/<%= veterans.id %>?_method=PUT", method="POST">
             <div class="row">
                 <div class="col">
                     Image: <input type="text" name="img" value="<%= veterans.img %>">
