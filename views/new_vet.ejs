@@ -15,64 +15,52 @@
         <%- include ('./partials/nav.ejs') %>
     </nav>
     <div class="container">
-        <form action="/veterans", method="POST">
-            <div class="row">
-                <div class="col">
-                    Image: <input type="text" name="img">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Name: <input type="text" name="name">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Age: <input type="number" name="age">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Height: <input type="text" name="height">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Weight: <input type="number" name="weight">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Position: <input type="text" name="position">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Team Name: <input type="text" name="team_name">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Team Logo: <input type="text" name="team_logo">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Jersey Number:<input type="number" name="number">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Experience:<input type="number" name="exp">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Notes: <input type="text" name="notes">
-                </div>
-            </div>
-            <input type="submit" value="Add Veteran">
-        </form>    
+        <div class="add-player">
+            <h1>Add Player</h1>
+            <!-- start form  -->
+            <form action="/veterans", method="POST">
+                <!-- player info fieldset -->
+                <fieldset class="player-info">
+                    <!-- Legend for player info  -->
+                    <legend>Player Information</legend>
+                        <!-- image -->
+                        <label>Player Image</label>
+                        <input type="text" name="img">
+                        <!-- name  -->
+                        <label>Players Name</label>
+                        <input type="text" name="name">
+                        <!-- age  -->
+                        <label>Players Age</label>
+                        <input type="number" name="age">
+                        <!-- height  -->
+                        <label>Players Height</label>
+                        <input type="text" name="height">
+                        <!-- weight  -->
+                        <label>Players Weight</label>
+                        <input type="number" name="weight">
+                        <!-- position  -->
+                        <label>Position</label>
+                        <input type="text" name="position">
+                        <!-- team name  -->
+                        <label>Team Name</label>
+                        <input type="text" name="team_name">
+                        <!-- team logo  -->
+                        <label>Team Logo</label>
+                        <input type="text" name="team_logo">
+                        <!-- jersey # -->
+                        <label>Jersey Number</label>
+                        <input type="number" name="number">
+                        <!-- experience  -->
+                        <label>Years of Experience</label>
+                        <input type="number" name="exp">
+                </fieldset>
+                <fieldset class="player-notes">
+                    <legend>Player Notes</legend>
+                    <input type="text" name="notes">
+                </fieldset>    
+                <input type="submit" value="Add Veteran">
+            </form>   
+        </div>     
     </div>
 
 

@@ -15,64 +15,50 @@
         <%- include ('./partials/nav.ejs') %>
     </nav>
     <div class="container">
-        <form action="/veterans/<%= veterans.id %>?_method=PUT", method="POST">
-            <div class="row">
-                <div class="col">
-                    Image: <input type="text" name="img" value="<%= veterans.img %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Name: <input type="text" name="name" value="<%= veterans.name %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Age: <input type="number" name="age" value="<%= veterans.age %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Height: <input type="text" name="height" value="<%= veterans.height %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Weight: <input type="number" name="weight" value="<%= veterans.weight %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Position: <input type="text" name="position" value="<%= veterans.position %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Team Name: <input type="text" name="team_name" value="<%= veterans.team_name %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Team Logo: <input type="text" name="team_logo" value="<%= veterans.team_logo %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Jersey Number:<input type="number" name="number" value="<%= veterans.number %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Experience:<input type="number" name="exp" value="<%= veterans.exp %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Notes: <input type="text" name="notes" value="<%= veterans.notes %>">
-                </div>
-            </div>
-            <input type="submit" value="Edit Player">
-        </form>    
+        <div class="edit-player">
+            <h1>Edit Player</h1>
+            <!-- start form  -->
+            <form action="/veterans/<%= veterans.id %>?_method=PUT", method="POST">
+                <!-- player info fieldset  -->
+                <fieldset class="player-info">
+                    <!-- image  -->
+                    <label>Player Image</label>
+                    <input type="text" name="img" value="<%= veterans.img %>">
+                    <!-- name  -->
+                    <label>Players Name</label>
+                    <input type="text" name="name" value="<%= veterans.name %>">
+                    <!-- age  -->
+                    <label>Players Age</label>
+                    <input type="number" name="age" value="<%= veterans.age %>">
+                    <!-- height  -->
+                    <label>Players Height</label>
+                    <input type="text" name="height" value="<%= veterans.height %>">
+                    <!-- weight  -->
+                    <label>Players Weight</label>
+                    <input type="number" name="weight" value="<%= veterans.weight %>">
+                    <!-- position  -->
+                    <label>Position</label>
+                    <input type="text" name="position" value="<%= veterans.position %>">
+                    <!-- team name  -->
+                    <label>Team Name</label>
+                    <input type="text" name="team_name" value="<%= veterans.team_name %>">
+                    <!-- team logo  -->
+                    <label>Team Logo</label>
+                    <input type="text" name="team_logo" value="<%= veterans.team_logo %>">
+                    <!-- jersey #  -->
+                    <label>Jersey Number</label>
+                    <input type="number" name="number" value="<%= veterans.number %>">
+                    <!-- experience  -->
+                    <label>Years of Experience</label>
+                    <input type="number" name="exp" value="<%= veterans.exp %>">
+                </fieldset>
+                <fieldset class="player-notes">
+                    <legend>Player Notes</legend>
+                    <input type="text" name="notes" value="<%= veterans.notes %>">
+                </fieldset>    
+                <input type="submit" value="Edit Player">
+            </form>    
+        </div>
     </div>
 
 

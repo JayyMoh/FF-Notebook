@@ -15,69 +15,54 @@
         <%- include ('./partials/nav.ejs') %>
     </nav>
     <div class="container">
-        <form action="/rookies", method="POST">
-            <div class="row">
-                <div class="col">
-                    Image: <input type="text" name="img">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Name: <input type="text" name="name">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Age: <input type="number" name="age">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Height: <input type="text" name="height">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Weight: <input type="number" name="weight">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Position: <input type="text" name="position">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Team Name: <input type="text" name="team_name">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Team Logo: <input type="text" name="team_logo">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Jersey Number:<input type="number" name="number">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    College:<input type="text" name="college">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Draft Capital:<input type="text" name="draft_capital">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Notes: <input type="text" name="notes">
-                </div>
-            </div>
-            <input type="submit" value="Add Rookie">
-        </form>    
+        <div class="add-player">
+            <h1>Add Player</h1>
+            <!-- start form  -->
+            <form action="/rookies", method="POST">
+                <!-- player info fieldset  -->
+                <fieldset class="player-info">
+                    <legend>Player Information</legend>
+                        <!-- image  -->
+                        <label>Player Image</label>
+                        <input type="text" name="img">
+                        <!-- name  -->
+                        <label>Player Name</label>
+                        <input type="text" name="name">
+                        <!-- age  -->
+                        <label>Players Age</label>
+                        <input type="number" name="age">
+                        <!-- height  -->
+                        <label>Players Height</label>
+                        <input type="text" name="height">
+                        <!-- weight  -->
+                        <label>Players Weight</label>
+                        <input type="number" name="weight">
+                        <!-- position  -->
+                        <label>Position</label>
+                        <input type="text" name="position">
+                        <!-- team name  -->
+                        <label>Team Name</label>
+                        <input type="text" name="team_name">
+                        <!-- team logo  -->
+                        <label>Team Logo</label>
+                        <input type="text" name="team_logo">
+                        <!-- Jersey Number  -->
+                        <label>Jersey Number</label>
+                        <input type="number" name="number">
+                        <!-- college  -->
+                        <labe>Players College</labe>
+                        <input type="text" name="college">
+                        <!-- draft capital  -->
+                        <label>Draft Capital</label>
+                        <input type="text" name="draft_capital">
+                </fieldset>
+                <fieldset class="player-notes">
+                    <legend>Player Notes</legend>
+                    <input type="text" name="notes">
+                </fieldset>    
+                <input type="submit" value="Add Rookie">
+            </form> 
+        </div>   
     </div>
 
 

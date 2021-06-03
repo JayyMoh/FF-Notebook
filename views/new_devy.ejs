@@ -15,59 +15,47 @@
         <%- include ('./partials/nav.ejs') %>
     </nav>
     <div class="container">
-        <form action="/devy", method="POST">
-            <div class="row">
-                <div class="col">
-                    Image: <input type="text" name="img">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Name: <input type="text" name="name">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Age: <input type="number" name="age">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Height: <input type="text" name="height">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Weight: <input type="number" name="weight">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Position: <input type="text" name="position">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    High School: <input type="text" name="high_school">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Star Recruit: <input type="text" name="star_recruit">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    College:<input type="text" name="college">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Notes: <input type="text" name="notes">
-                </div>
-            </div>
-            <input type="submit" value="Add Devy">
-        </form>    
+        <div class="add-player">
+            <h1>Add Player</h1>
+            <!-- start form  -->
+            <form action="/devy", method="POST">
+                <fieldset class="player-info">
+                    <legend>Player Information</legend>
+                        <!-- image  -->
+                        <label>Player Image</label>
+                        <input type="text" name="img">
+                        <!-- name  -->
+                        <label>Players Name</label>
+                        <input type="text" name="name">
+                        <!-- age  -->
+                        <label>Players Age</label>
+                        <input type="number" name="age">
+                        <!-- height  -->
+                        <label>Players Height</label>
+                        <input type="text" name="height">
+                        <!-- weight  -->
+                        <label>Players Weight</label>
+                        <input type="number" name="weight">
+                        <!-- position  -->
+                        <label>Position</label>
+                        <input type="text" name="position">
+                        <!-- high school  -->
+                        <label>Players High School</label>
+                        <input type="text" name="high_school">
+                        <!-- college  -->
+                        <label>Players College</label>
+                        <input type="text" name="college">
+                        <!-- star recruit  -->
+                        <label>Recruiting Stars</label>
+                        <input type="text" name="star_recruit">
+                </fieldset>
+                <fieldset class="player-notes">
+                    <legend>Player Notes</legend>
+                    <input type="text" name="notes">
+                </fieldset>    
+                <input type="submit" value="Add Devy">
+            </form>
+        </div>    
     </div>
 
 

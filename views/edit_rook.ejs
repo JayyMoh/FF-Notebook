@@ -15,69 +15,54 @@
         <%- include ('./partials/nav.ejs') %>
     </nav>
     <div class="container">
-        <form action="/rookies/<%= rookies.id %>?_method=PUT", method="POST">
-            <div class="row">
-                <div class="col">
-                    Image: <input type="text" name="img" value="<%= rookies.img %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Name: <input type="text" name="name" value="<%= rookies.name %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Age: <input type="number" name="age" value="<%= rookies.age %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Height: <input type="text" name="height" value="<%= rookies.height %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Weight: <input type="number" name="weight" value="<%= rookies.weight %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Position: <input type="text" name="position" value="<%= rookies.position %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Team Name: <input type="text" name="team_name" value="<%= rookies.team_name %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Team Logo: <input type="text" name="team_logo" value="<%= rookies.team_logo %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Jersey Number:<input type="number" name="number" value="<%= rookies.number %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    College:<input type="text" name="college" value="<%= rookies.college %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Draft Capital:<input type="text" name="draft_capital" value="<%= rookies.draft_capital %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Notes: <input type="text" name="notes" value="<%= rookies.notes %>">
-                </div>
-            </div>
-            <input type="submit" value="Edit Player">
-        </form>    
+        <div class="edit-player">
+            <h1>Edit Player</h1>
+            <!-- start form  -->
+            <form action="/rookies/<%= rookies.id %>?_method=PUT", method="POST">
+                <!-- player info fieldset  -->
+                <fieldset class="player-info">
+                    <legend>Player Information</legend>
+                        <!-- image  -->
+                        <label>Player Image</label>
+                        <input type="text" name="img" value="<%= rookies.img %>">
+                        <!-- name  -->
+                        <label>Players Name</label>
+                        <input type="text" name="name" value="<%= rookies.name %>">
+                        <!-- age  -->
+                        <label>Players Age</label>
+                        <input type="number" name="age" value="<%= rookies.age %>">
+                        <!-- height  -->
+                        <label>Players Height</label>
+                        <input type="text" name="height" value="<%= rookies.height %>">
+                        <!-- weight  -->
+                        <label>Players Height</label>
+                        <input type="number" name="weight" value="<%= rookies.weight %>">
+                        <!-- position  -->
+                        <label>Position</label>
+                        <input type="text" name="position" value="<%= rookies.position %>">
+                        <!-- team name  -->
+                        <label>Team Name</label>
+                        <input type="text" name="team_name" value="<%= rookies.team_name %>">
+                        <!-- team logo  -->
+                        <label>Team Logo</label>
+                        <input type="text" name="team_logo" value="<%= rookies.team_logo %>">
+                        <!-- jersey #  -->
+                        <label>Jersey Number</label>
+                        <input type="number" name="number" value="<%= rookies.number %>">
+                        <!-- college  -->
+                        <label>Players College</label>
+                        <input type="text" name="college" value="<%= rookies.college %>">
+                        <!-- draft capital  -->
+                        <label>Draft Capital</label>
+                        <input type="text" name="draft_capital" value="<%= rookies.draft_capital %>">
+                </fieldset>
+                <fieldset class="player-notes">   
+                    <legend>Player Notes</legend> 
+                    <input type="text" name="notes" value="<%= rookies.notes %>">
+                </fieldset>        
+                <input type="submit" value="Edit Player">
+            </form>
+        </div>    
     </div>
 
 

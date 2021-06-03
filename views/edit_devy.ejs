@@ -15,59 +15,49 @@
         <%- include ('./partials/nav.ejs') %>
     </nav>
     <div class="container">
-        <form action="/devy/<%= devy.id %>?_method=PUT", method="POST">
-            <div class="row">
-                <div class="col">
-                    Image: <input type="text" name="img" value="<%= devy.img %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Name: <input type="text" name="name" value="<%= devy.name %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Age: <input type="number" name="age" value="<%= devy.age %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Height: <input type="text" name="height" value="<%= devy.height %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Weight: <input type="number" name="weight" value="<%= devy.weight %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Position: <input type="text" name="position" value="<%= devy.position %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    College: <input type="text" name="team_name" value="<%= devy.college %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    High School: <input type="text" name="team_logo" value="<%= devy.high_school %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Star Recruit:<input type="text" name="draft_capital" value="<%= devy.star_recruit %>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">        
-                    Notes: <input type="text" name="notes" value="<%= devy.notes %>">
-                </div>
-            </div>
-            <input type="submit" value="Edit Player">
-        </form>    
+        <div class="edit-player">
+        <h1>Edit Player</h1>
+            <!-- start form  -->
+            <form action="/devy/<%= devy.id %>?_method=PUT", method="POST">
+                <!-- player info fieldset  -->
+                <fieldset class="player-info">
+                    <!-- legend for player info  -->
+                    <legend>Player Information</legend>
+                        <!-- image  -->
+                        <label>Player Image</label>
+                        <input type="text" name="img" value="<%= devy.img %>">
+                        <!-- name  -->
+                        <label>Players Name</label>
+                        <input type="text" name="name" value="<%= devy.name %>">
+                        <!-- age  -->
+                        <label>Players Age</label>
+                        <input type="number" name="age" value="<%= devy.age %>">
+                        <!-- height  -->
+                        <label>Players Height</label>
+                        <input type="text" name="height" value="<%= devy.height %>">
+                        <!-- weight  -->
+                        <label>Players Weight</label>
+                        <input type="number" name="weight" value="<%= devy.weight %>">
+                        <!-- position  -->
+                        <label>Players Position</label>
+                        <input type="text" name="position" value="<%= devy.position %>">
+                        <!-- team name  -->
+                        <label>Team Name</label>
+                        <input type="text" name="team_name" value="<%= devy.college %>">
+                        <!-- team logo  -->
+                        <label>Team Logo</label>
+                        <input type="text" name="team_logo" value="<%= devy.high_school %>">
+                        <!-- draft capital  -->
+                        <label>Draft Capital</label>
+                        <input type="text" name="draft_capital" value="<%= devy.star_recruit %>">
+                </fieldset>
+                <fieldset class="player-notes">
+                        <legend>Player Notes</legend>        
+                        <input type="text" name="notes" value="<%= devy.notes %>">
+                </fieldset>         
+                <input type="submit" value="Edit Player">
+            </form>  
+        </div>      
     </div>
 
 
