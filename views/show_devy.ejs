@@ -16,46 +16,42 @@
     </nav>
     <div class="cotnainer">
         <!-- player card  -->
-        <div class="container">
-            <div class="row">
-                <div class="col-1">
-                    <img src="<%= devy.img %>" height="100px" width="100px">
+        <div class="container player-card-container">
+            <div class="row player-card-info">
+                <div class="col">
+                    <img src="<%= devy.img %>" height="100px" width="100px" class="player-card-img">
                 </div>
-                <div class="col-2">
-                    <h3> <%= devy.name %> </h3>
-                    <br/>
-                    <h3> #<%= devy.number %>  </h3>
+                <div class="col">
+                    <h3 class="player-card-name"> <%= devy.name %> </h3>
                 </div>
-                <div class="col-3"> 
+                <div class="col"> 
                     <p><%= devy.college %></p> 
                     <p><%= devy.high_school %></p> 
                     <br/>
                     <p> Height: <%= devy.height %> </p>
                 </div>
-                <div class="col-4">
+                <div class="col">
                     <p> Age: <%= devy.age %> </p>
                     <br/>
                     <p> Weight: <%= devy.weight %> </p>
                 </div>
             </div>
             <!-- user notes on the player  -->
-            <div class="container">
+            <div class="container player-card-notes">
                 <article>
-                    <h2>Player Notes</h2>
+                    <h2 class="player-card-notes-head">Player Notes</h2>
                     <p> <%= devy.notes %> </p>
                 </article>
             </div>
             <!-- player buttons -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-1">
-                        <a href="/devy/<%= devy.id %>/edit"><button>Add a Note</button></a>
-                    </div>
-                    <div class="col-2">
-                        <form action="/devy/<%= devy.id %>?_method=DELETE" method="POST">
-                            <button>Delete Player</button>
-                        </form>        
-                    </div>
+            <div class="container player-card-btn-container">
+                <div class="player-card-btn-item">
+                    <a href="/devy/<%= devy.id %>/edit"><button>Add a Note</button></a>
+                </div>
+                <div class="player-card-btn-item">    
+                    <form action="/devy/<%= devy.id %>?_method=DELETE" method="POST">
+                        <button>Delete Player</button>
+                    </form>        
                 </div>
             </div>
         </div>      

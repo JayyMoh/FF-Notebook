@@ -16,45 +16,43 @@
     </nav>
     <div class="cotnainer">
         <!-- player card  -->
-        <div class="container">
-            <div class="row">
-                <div class="col-1">
-                    <img src="<%= rookies.img %>" height="100px" width="100px">
+        <div class="container player-card-container">
+            <div class="row player-card-info">
+                <div class="col">
+                    <img src="<%= rookies.img %>" height="100px" width="100px" class="player-card-img">
                 </div>
-                <div class="col-2">
-                    <h3> <%= rookies.name %> </h3>
+                <div class="col">
+                    <h3 class="player-card-name"> <%= rookies.name %> </h3>
                     <br/>
                     <h3> #<%= rookies.number %>  </h3>
                 </div>
-                <div class="col-3"> 
+                <div class="col"> 
                     <p><%= rookies.team_name %></p> 
                     <br/>
                     <p> Height: <%= rookies.height %> </p>
                 </div>
-                <div class="col-4">
+                <div class="col">
                     <p> Age: <%= rookies.age %> </p>
                     <br/>
                     <p> Weight: <%= rookies.weight %> </p>
                 </div>
             </div>
             <!-- user notes on the player  -->
-            <div class="container">
+            <div class="container player-card-notes">
                 <article>
-                    <h2>Player Notes</h2>
+                    <h2 class="player-card-notes-head">Player Notes</h2>
                     <p> <%= rookies.notes %> </p>
                 </article>
             </div>
             <!-- player buttons -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-1">
-                        <a href="/rookies/<%= rookies.id %>/edit"><button>Add a Note</button></a>
-                    </div>
-                    <div class="col-2">
-                        <form action="/rookies/<%= rookies.id %>?_method=DELETE" method="POST">
-                            <button>Delete Player</button>
-                        </form>        
-                    </div>
+            <div class="container player-card-btn-container">
+                <div class="player-card-btn-item">
+                    <a href="/rookies/<%= rookies.id %>/edit"><button>Add a Note</button></a>
+                </div>
+                <div class="player-card-btn-item">
+                    <form action="/rookies/<%= rookies.id %>?_method=DELETE" method="POST">
+                        <button>Delete Player</button>
+                    </form>        
                 </div>
             </div>
         </div>      

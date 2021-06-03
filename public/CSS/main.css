@@ -126,3 +126,44 @@ body {
 }
 
 /* show pages  */
+.player-card-container {
+    border: solid 2px black;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px gray;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.player-card-info {
+    margin-top: 10px;
+}
+
+.player-card-img {
+    border-radius: 5px;
+    border: solid black 2px;
+}
+
+.player-card-name {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.player-card-notes {
+    margin-top: 10px;
+}
+
+.player-card-notes-head {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.player-card-btn-container {
+    display: flex;
+}
+
+.player-card-btn-item {
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
