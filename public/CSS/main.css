@@ -61,10 +61,13 @@ body {
 }
 
 
-/* show pages  */
+/* devy, rookie, and veteran main pages  */
 .full-container {
-    border: solid 3px red;
+    border: solid 1px gray;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 121);
     margin-top: 30px;
+    color: white;
 }
 
 .page-heading {
@@ -74,8 +77,9 @@ body {
 .position-row {
     display: flex;
     flex-direction: row;
-    border: solid 3px red;
-    border-radius: 3px;
+    border: solid 2px black;
+    background-color: rgba(219, 219, 219, 0.993);
+    border-radius: 10px;
     margin: 15px 5px;
 }
 
@@ -88,19 +92,23 @@ body {
     align-self: flex-end;
     margin-top: 5px;
     margin-bottom: 5px;
+    margin-left: 50px;
 }
 
 .player-container {
-    border: solid 3px red;
-    border-radius: 3px;
-    margin: 15px 5px;
+    border: solid 2px black;
+    background-color: rgba(219, 219, 219, 0.993);
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .player-img {
-    border: solid 2px gray;
+    border: solid 1px black;
+    background-color: gray;
     border-radius: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    box-shadow: 1px 1px 1px 1px gray;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
 .logo-img {
@@ -110,6 +118,11 @@ body {
 
 .player-item {
     border: solid black 1px;
-    margin: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px gray;
+    margin: 15px 10px;
     background-color: white;
+    color: black;
 }
+
+/* show pages  */
