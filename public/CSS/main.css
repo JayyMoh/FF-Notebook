@@ -60,6 +60,10 @@ body {
     margin-bottom: 50px;
 }
 
+.main-link {
+    text-decoration: none;
+    color: white;
+}
 
 /* devy, rookie, and veteran main pages  */
 .full-container {
